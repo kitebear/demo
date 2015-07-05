@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -ms-touch-action: none; /* 阻止windows Phone 的默认触摸事件 */
+  -webkit-backface-visibility: hidden;
+}
+
+.cube {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Other transform properties here */
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  *cursor: default;
+  overflow: hidden;
+  font: 16px/1.5 "Helvetica", "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;
+}
+
+input::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #EEEEEE;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+body {
+  -webkit-text-size-adjust: 100% !important;
+}
+
+input[type=radio]::-ms-check, input[type=checkbox]::-ms-check {
+  display: none;
+}
+
+.css {
+  -webkit-touch-callout: none
+}
+
+//禁止ios和android用户选中文字
+.css {
+  -webkit-user-select: none
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  html {
+    font-size: 15px
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 719px) {
+  html {
+    font-size: 20px
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 749px) {
+  html {
+    font-size: 22.5px
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 799px) {
+  html {
+    font-size: 23.5px
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 959px) {
+  html {
+    font-size: 25px
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1079px) {
+  html {
+    font-size: 30px
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  html {
+    font-size: 32px
+  }
+}
+
+//竖屏时使用的样式
+@media all and (orientation: portrait) {
+  .css {
+  }
+}
+
+//横屏时使用的样式
+@media all and (orientation: landscape) {
+  .css {
+  }
+}
+
+//框架
+body {
+  overflow: hidden;
+}
+
+.page-wrap {
+  overflow: hidden
+}
+
+.page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.img{
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.contain {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: relative;
+  z-index: 0
+}
+
+.current .contain, .slide .contain {
+  display: block
+}
+
+.current {
+  display: block;
+  z-index: 1
+}
+
+.slide {
+  display: block;
+  z-index: 2
+}
+
+.swipe {
+  display: block;
+  z-index: 3;
+  transition-duration: 0ms !important;
+  -webkit-transition-duration: 0ms !important
+}
+
+.ele_hide{
+  display: none!important;
+}
+
+@import "main";

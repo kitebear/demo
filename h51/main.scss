@@ -1,0 +1,210 @@
+.auto {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  outline: none;
+  opacity: 0.7;
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 999;
+  display: block;
+}
+
+.arrowing {
+  z-index: 999;
+  width: 30px;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -15px;
+  display: block;
+}
+
+.auto_at {
+  animation-name: auto_at;
+  -webkit-animation-name: auto_at;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state:paused;
+//  -webkit-animation-timing-function: ease-out; /* 马上跳到动画每一结束桢的状态 */
+}
+
+@keyframes auto_at {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes auto_at {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.moveUp {
+  animation-name: moveUp;
+  -webkit-animation-name: moveUp;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  visibility: visible !important;
+  -webkit-animation-play-state:paused;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+.fadeInNormal {
+  animation-name: fadeInNormal;
+  -webkit-animation-name: fadeInNormal;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+  -webkit-animation-play-state:paused;
+}
+
+@keyframes fadeInNormal {
+  0% {
+    transform: scale(1);
+    opacity: 0.0;
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInNormal {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+  }
+
+  60% {
+    -webkit-transform: scale(1);
+  }
+
+  80% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.opacity-twinkle {
+  -webkit-animation: opacity-twinkle 2s 0.1s infinite linear normal forwards;
+  animation: opacity-twinkle 2s 0.1s infinite linear normal forwards;
+}
+
+@-webkit-keyframes opacity-twinkle {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-twinkle {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.auto_at1 {
+  animation-name: auto_at1;
+  -webkit-animation-name: auto_at1;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state:paused;
+  //  -webkit-animation-timing-function: ease-out; /* 马上跳到动画每一结束桢的状态 */
+}
+
+@keyframes auto_at1 {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(40%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes auto_at1 {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(40%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
