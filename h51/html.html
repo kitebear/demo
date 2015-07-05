@@ -15,37 +15,57 @@
 <body>
 <!-- 框架[[ -->
 <div id="pageContain" class="page-wrap">
-    <div class="page page2" style="background-color: yellow;">
-        <div class="contain">
-            第二屏
+    <div class="page page1 current">
+        <div class="contain" style="background-color: #DEE1E2;">
+            <div>
+                <img src="image/git1.gif" load="false"
+                     style="  width: 100%;margin: auto;position: absolute;top: 0;bottom: 0;" load="loading">
+            </div>
         </div>
     </div>
 
-    <div class="page page1 current" style="background-color: white;">
+    <div class="page page2" style="background-color: white;">
         <div class="contain">
-            <img src="#" url="image/get.gif" alt="loading"
+            <div>
+                <img src="#" url="image/get.gif" alt="loading"
+                     style="position: absolute; top: 0px;   width: 100%; left: 0px; transform: scale(1, 1) rotate(0deg); -webkit-filter: blur(0px); opacity: 1;"/>
+            </div>
+            <div style="position: absolute;width: 150px;margin: 0 auto;left: 0;right: 0;top:40px;">
+                <img src="#" style="width: 100%" url="image/get.png" alt="loading" class="fadeInNormal"/>
+            </div>
+            <div style="position: absolute;width: 150px;margin: 0 auto;left: 0;right: 0;top: 180px;">
+                <img class="moveUp" style="width: 100%" src="#" url="image/get1.png" alt="loading"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="page page3">
+        <div class="contain">
+            <img src="#" url="image/chengshi.gif" alt="loading"
                  style="position: absolute; top: 0px;   width: 100%; left: 0px; transform: scale(1, 1) rotate(0deg); -webkit-filter: blur(0px); opacity: 1;"/>
-            <img src="#" url="image/get.png" alt="loading" class="fadeInNormal" style="position: absolute;width: 150px;margin: 0 auto;left: 0;right: 0;top:50px;"/>
-            <img class="moveUp" src="#" url="image/get1.png" alt="loading"
-                 style="  position: absolute;width: 150px;margin: 0 auto;left: 0;right: 0;top: 190px;"/>
+
+            <div style="z-index: 0;border-radius: 0px;top: 70px;left: 221.741897px;width: 70px;height: 175px;animation-duration: 1s;-webkit-animation-duration: 1s;display: block;position: absolute;">
+                <img src="#" url="image/chengshi.png" alt="loading" class="oldele expandOpen"
+                     style="position: absolute;width: 70px;top: 0px;left: 0px;-webkit-animation-play-state: running;animation-play-state: running;">
+            </div>
         </div>
     </div>
 
-    <div class="page page2" style="background-color: yellow;">
+    <div class="page page4" style="background-color:#fff;">
         <div class="contain">
-            第二屏
+            <img src="#" url="image/page3.gif" alt="loading" class="oldele" style="position: absolute;top: -35px;left: 0px;width: 100%;transform: scale(1, 1) rotate(0deg);-webkit-filter: blur(0px);opacity: 1;" />
+            <div class="fadeIn" style="  z-index: 0;border-radius: 0px;top: 72px;left: 171px;width: 198px;height: 80px;animation-duration: 1s;-webkit-animation-duration: 1s;display: block;position: relative;">
+                <img src="#" url="image/get.png" alt="loading" style="  position: absolute;width: 78px;top: 0px;left: 0px;" />
+            </div>
+            <div class="zoomIn" style="  z-index: 0;border-radius: 0px;top: 70.428571px;left: 221.142857px;width: 153px;height: 368px;animation-duration: 1s;-webkit-animation-duration: 1s;display: block;position: relative;">
+                <img src="#" url="image/page3.png" alt="loading" style="position: absolute;width: 75px;top: 0px;left: 0px;">
+            </div>
         </div>
     </div>
 
-    <div class="page page3" style="background-color: gray;">
-        <div class="contain">
-            第三屏
-        </div>
-    </div>
-
-    <div class="page page4" style="background-color: purple;">
-        <div class="contain">
-            第四屏
+    <div class="page page5" style="background-color: black;">
+        <div class="contain" style="z-index: 0;border-radius: 0px;top: -68px;left: 0px;width: 640px;height: 1136px;animation-duration: 1s;-webkit-animation-duration: 1s;display: block;">
+            <img class="fadeInNormal" src="#" url="image/end.png" alt="loading" alt="loading" style="  position: absolute;width: 100%;top: 0px;left: 0px;" />
         </div>
     </div>
 </div>
@@ -56,6 +76,7 @@
 </audio>
 <script type="text/javascript" src="zepto.min.js"></script>
 <script type="text/javascript" src="fullPage.js"></script>
+<script type="text/javascript" src="pageResponse.js"></script>
 <script type="text/javascript" src="1.js"></script>
 </body>
 </html>

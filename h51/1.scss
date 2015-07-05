@@ -168,4 +168,15 @@ body {
   display: none!important;
 }
 
+.element {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  border: 0px dashed rgba(20,20,20,0.5);
+  margin: 0px;
+  z-index: 0;
+  color: black;
+}
+
 @import "main";

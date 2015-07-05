@@ -36,7 +36,7 @@ $(function () {
     });
 
     play.addEventListener("canplaythrough", function () {
-            play.play();
+
         }
     );
 
@@ -44,12 +44,16 @@ $(function () {
         change_status(".moveUp", "running");
         change_status(".arrowing", "running");
         change_status(".fadeInNormal", "running");
+        change_status(".expandOpen", "running");
+        change_status(".fadeIn", "running");
     }
 
     function stop_page1() {
         change_status(".moveUp", "paused");
         change_status(".arrowing", "paused");
         change_status(".fadeInNormal", "paused");
+        change_status(".expandOpen", "paused");
+        change_status(".fadeIn", "paused");
     }
 
     function load_before() {
@@ -69,11 +73,12 @@ $(function () {
     var counter = 0;
     for (var i = 0, img; i < len; i++) {
         img = $("img")[ i ];
-        img.src = img.getAttribute("url");
+        if(!img.getAttribute("load")){
+            img.src = img.getAttribute("url");
+        }
         img.onload = function () {
             counter++;
             if (counter >= len) {
-                    load();
             }
         };
     }
@@ -93,13 +98,14 @@ $(function () {
     };
 
     function load() {
-        play_page1();
+        $("#musiccontrolon").addClass("ele_hide");
     }
+
 
     runPage = new FullPage({
         id: 'pageContain',                            // id of contain
         slideTime: 800,                               // time of slide
-        continuous: true,                             // create an infinite feel with no endpoints
+        continuous: false,                             // create an infinite feel with no endpoints
         effect: {                                     // slide effect
             transform: {
                 translate: 'Y',					   // 'X'|'Y'|'XY'|'none'
@@ -111,10 +117,28 @@ $(function () {
         mode: 'wheel,touch',               // mode of fullpage
         easing: 'ease',                                // easing('ease','ease-in','ease-in-out' or use cubic-bezier like [.33, 1.81, 1, 1] )
         callback: function (index, thisPage) {
-            //index = index + 1 > 3 ? 0 : index + 1;
-            //autoPlay(index);
+            switch (index){
+                case 0:
+
+                    break;
+                case 1:
+                    play_page1();
+                    play.play();
+                    $("#musiccontrolon").removeClass("ele_hide");
+                    break;
+            }
         }
     });
 
+    load();
     load_before();
+
+    window.onload = window.onresize = function(){
+        var page = new pageResponse({
+            class : 'contain',     //模块的类名，使用class来控制页面上的模块(1个或多个)
+            mode : 'contain',     // auto || contain || cover
+            width : '320',      //输入页面的宽度，只支持输入数值，默认宽度为320px
+            height : '568'      //输入页面的高度，只支持输入数值，默认高度为504px
+        })
+    }
 });
