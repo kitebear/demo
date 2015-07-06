@@ -16,6 +16,7 @@ function FullPage(options) {
 		sTime = options.slideTime || 800,
 		effect = options.effect || {},
 		indexNow = 0,
+		removeCount= 0,
 		browser = {},
 		pageRange = {},
 		cubicCurve = {},
@@ -41,8 +42,10 @@ function FullPage(options) {
 		replaceClass,
 		roundPage,
 		goPage,
+		removePage,
 		navChange,
 		wheelScroll;
+
 
 	if (!page || pagelen === 1) return;
 	if (options.mode) {
@@ -436,7 +439,24 @@ function FullPage(options) {
 			return false;
 		}
 		return true;
-	}
+	};
+
+	removePage = function(index){
+		if(index===indexNow){
+			return;
+		}
+		console.log(page);
+		iPage--;
+		pagelen--;
+		if(index<indexNow){
+			--indexNow;
+		}
+		removeCount++;
+		stepArr.splice(index,1);
+		stepNow.splice(index,1);
+		pageStyle.splice(index,1);
+		pageContain.removeChild(page[index]);
+	};
 
 	goPage = function(to) {
 
@@ -491,7 +511,7 @@ function FullPage(options) {
 			replaceClass(page[indexNow], 'slide', 'current');
 
 			if (options.callback) {
-				options.callback(indexNow, page[indexNow]);
+				options.callback(indexNow+removeCount, page[indexNow]);
 			}
 
 			_isLocked = false;
@@ -693,7 +713,7 @@ function FullPage(options) {
 								replaceClass(page[to], 'slide', 'current');
 								indexNow = to;
 								if (options.callback) {
-									options.callback(indexNow, page[indexNow]);
+									options.callback(indexNow+removeCount, page[indexNow]);
 								}
 								setTimeout(function() {
 									_isLocked = false;
@@ -799,7 +819,7 @@ function FullPage(options) {
 								replaceClass(page[to], 'slide', 'current');
 								indexNow = to;
 								if (options.callback) {
-									options.callback(indexNow, page[indexNow]);
+									options.callback(indexNow+removeCount, page[indexNow]);
 								}
 								setTimeout(function() {
 									_isLocked = false;
@@ -995,6 +1015,9 @@ function FullPage(options) {
 		},
 		prev : function() {
 			goPage(indexNow - 1);
+		},
+		removePage: function(index){
+			removePage(index);
 		}
 	}
 }

@@ -125,6 +125,7 @@ $(function () {
                     play_page1();
                     play.play();
                     $("#musiccontrolon").removeClass("ele_hide");
+                    runPage.removePage(0);
                     break;
             }
         }
