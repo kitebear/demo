@@ -127,25 +127,14 @@ body {
   display: none; }
 
 .auto {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  outline: none;
+  width: 100%;
   opacity: 0.7;
-  width: 30px;
-  position: absolute;
-  right: 15px;
-  top: 15px;
   z-index: 999;
-  display: block; }
-
-.arrowing {
-  z-index: 999;
-  width: 30px;
+  outline: none;
+  display: block;
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -15px;
-  display: block; }
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent; }
 
 .auto_at {
   animation-name: auto_at;
@@ -153,8 +142,9 @@ body {
   animation-duration: 1.5s;
   -webkit-animation-duration: 1.5s;
   animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state: paused; }
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite; }
 
 @keyframes auto_at {
   0% {
@@ -175,10 +165,9 @@ body {
   -webkit-animation-name: moveUp;
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
-  animation-timing-function: ease;
-  -webkit-animation-timing-function: ease;
   visibility: visible !important;
-  -webkit-animation-play-state: paused; }
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease; }
 
 @keyframes moveUp {
   0% {
@@ -197,8 +186,7 @@ body {
   -webkit-animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
-  visibility: visible !important;
-  -webkit-animation-play-state: paused; }
+  visibility: visible !important; }
 
 @keyframes fadeInNormal {
   0% {
@@ -248,8 +236,7 @@ body {
   animation-duration: 1.5s;
   -webkit-animation-duration: 1.5s;
   animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state: paused; }
+  -webkit-animation-iteration-count: infinite; }
 
 @keyframes auto_at1 {
   0% {
@@ -272,7 +259,6 @@ body {
   -webkit-animation-duration: 1.2s;
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
-  -webkit-animation-play-state: paused;
   visibility: visible !important; }
 
 @keyframes expandOpen {
@@ -304,7 +290,6 @@ body {
   -webkit-animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-play-state: paused;
   visibility: visible !important; }
 
 @keyframes fadeIn {

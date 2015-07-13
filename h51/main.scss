@@ -1,28 +1,16 @@
-.music{
+.music {
   display: none;
 }
 
 .auto {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-user-select: none;
-  outline: none;
+  width: 100%;
   opacity: 0.7;
-  width: 30px;
-  position: absolute;
-  right: 15px;
-  top: 15px;
   z-index: 999;
+  outline: none;
   display: block;
-}
-
-.arrowing {
-  z-index: 999;
-  width: 30px;
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -15px;
-  display: block;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .auto_at {
@@ -31,9 +19,9 @@
   animation-duration: 1.5s;
   -webkit-animation-duration: 1.5s;
   animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state:paused;
-//  -webkit-animation-timing-function: ease-out; /* 马上跳到动画每一结束桢的状态 */
 }
 
 @keyframes auto_at {
@@ -65,10 +53,9 @@
   -webkit-animation-name: moveUp;
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
+  visibility: visible !important;
   animation-timing-function: ease;
   -webkit-animation-timing-function: ease;
-  visibility: visible !important;
-  -webkit-animation-play-state:paused;
 }
 
 @keyframes moveUp {
@@ -99,7 +86,6 @@
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
   visibility: visible !important;
-  -webkit-animation-play-state:paused;
 }
 
 @keyframes fadeInNormal {
@@ -177,7 +163,6 @@
   }
 }
 
-
 .auto_at1 {
   animation-name: auto_at1;
   -webkit-animation-name: auto_at1;
@@ -185,7 +170,6 @@
   -webkit-animation-duration: 1.5s;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state:paused;
   //  -webkit-animation-timing-function: ease-out; /* 马上跳到动画每一结束桢的状态 */
 }
 
@@ -220,7 +204,6 @@
   -webkit-animation-duration: 1.2s;
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
-  -webkit-animation-play-state:paused;
   visibility: visible !important;
 }
 
@@ -275,7 +258,6 @@
   -webkit-animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-play-state:paused;
   visibility: visible !important;
 }
 

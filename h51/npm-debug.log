@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run-script', 'dist' ]
+2 info using npm@2.8.4
+3 info using node@v0.12.2
+4 verbose config Skipping project config: /Users/xiedonghao/.npmrc. (matches userconfig)
+5 verbose stack Error: ENOENT, open '/Users/xiedonghao/package.json'
+5 verbose stack     at Error (native)
+6 verbose cwd /Users/xiedonghao/xdh/demo/h51
+7 error Darwin 14.4.0
+8 error argv "node" "/usr/local/bin/npm" "run-script" "dist"
+9 error node v0.12.2
+10 error npm  v2.8.4
+11 error path /Users/xiedonghao/package.json
+12 error code ENOENT
+13 error errno -2
+14 error enoent ENOENT, open '/Users/xiedonghao/package.json'
+14 error enoent This is most likely not a problem with npm itself
+14 error enoent and is related to npm not being able to find a file.
+15 verbose exit [ -2, true ]
