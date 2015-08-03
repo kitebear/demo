@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--运动的3种方式</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+ html,body,p,h3{
+ 	padding:0;
+ 	margin:0;
+ 	line-height: 1.5;
+ }
+ .d{
+ 	height:200px;
+ 	width:200px;
+ 	padding:10px;
+ 	border:10px #fff solid;
+ 	border-radius: 100%;
+ 	background: url(images/bag.png) rgb(36,72,115);
+ }
+ /*第一种*/
+ #d1{
+ 	-webkit-transition:all .5s ease-in-out;
+ 	-moz-transition:all .5s ease-in-out;
+ 	-ms-transition:all .5s ease-in-out;
+ 	-o-transition:all .5s ease-in-out;
+ 	transition:all .5s ease-in-out;
+ }
+ /*第二种*/
+ /*去*/
+@-webkit-keyframes line-move {
+	from{-webkit-transform:translateX(0);transform:translateX(0);}
+	to{-webkit-transform:translateX(300px);transform:translateX(300px);}
+}
+@-moz-keyframes line-move {
+	from{-moz-transform:translateX(0);transform:translateX(0);}
+	to{-moz-transform:translateX(300px);transform:translateX(300px);}
+}
+@-ms-keyframes line-move {
+	from{-ms-transform:translateX(0);transform:translateX(0);}
+	to{-ms-transform:translateX(300px);transform:translateX(300px);}
+}
+@-o-keyframes line-move {
+	from{-o-transform:translateX(0);transform:translateX(0);}
+	to{-o-transform:translateX(300px);transform:translateX(300px);}
+}
+@keyframes line-move {
+	from{transform:translateX(0);}
+	to{transform:translateX(300px);}
+}
+/*返回*/
+@-webkit-keyframes line-move2 {
+	from{-webkit-transform:translateX(300px);transform:translateX(300px);}
+	to{-webkit-transform:translateX(0);transform:translateX(0);}
+}
+@-moz-keyframes line-move2 {
+	from{-moz-transform:translateX(300px);transform:translateX(300px);}
+	to{-moz-transform:translateX(0);transform:translateX(0);}
+}
+@-ms-keyframes line-move2 {
+	from{-ms-transform:translateX(300px);transform:translateX(300px);}
+	to{-ms-transform:translateX(0);transform:translateX(0);}
+}
+@-o-keyframes line-move2 {
+	from{-o-transform:translateX(300px);transform:translateX(300px);}
+	to{-o-transform:translateX(0);transform:translateX(0);}
+}
+@keyframes line-move2 {
+	from{transform:translateX(300px);}
+	to{transform:translateX(0);}
+}
+/*第三种*/
+#d3{
+	position: absolute;
+	left: 0;
+}
+</style>
+</head>
+<body>
+<h3>点击div向左位移的3种方式（点击可运动）。前两种请在支持CSS3的浏览器，比如chrome、safari、firefox、opera、IE10及以上浏览器下查看</h3>
+<p><a href="#">第一种</a>方式：transition</p>
+<div class="d" id="d1"></div>
+<p><a href="#">第二种</a>方式：animation</p>
+<div class="d" id="d2"></div>
+<p><a href="#">第三种</a>方式：js（或jq）</p>
+<div class="d" id="d3"></div>
+<script>
+
+
+(function(){
+   
+   // 第一种
+   var count = 0;
+   var d1 = document.getElementById("d1");
+   d1.onclick = function(){
+   	 if(count % 2 == 0){
+      // 果然用js 赋值时，不能用 this.style.webkitTransform = "-webkit-translateX(300px)";
+   	 	this.style.webkitTransform = "translateX(300px)";
+   	 	this.style.mozTransform = "translateX(300px)";
+   	 	this.style.msTransform = "translateX(300px)";
+   	 	this.style.oTransform = "translateX(300px)";
+   	 	this.style.transform = "translateX(300px)";
+   	 }else{
+   	 	this.style.webkitTransform = "translateX(0)";
+   	 	this.style.mozTransform = "translateX(0)";
+   	 	this.style.msTransform = "translateX(0)";
+   	 	this.style.oTransform = "translateX(0)";
+   	 	this.style.transform = "translateX(0)";
+   	 }
+   	 count++;
+   }
+   // 第二种
+   var count2 = 0;
+   var d2 = document.getElementById("d2");
+   d2.onclick = function(){
+   	if(count2 % 2 == 0){
+	  this.style.webkitAnimation = "line-move .5s ease-in-out 1 alternate both";
+	  this.style.mozAnimation = "line-move .5s ease-in-out 1 alternate both";
+	  this.style.msAnimation = "line-move .5s ease-in-out 1 alternate both";
+	  this.style.oAnimation = "line-move .5s ease-in-out 1 alternate both";
+	  this.style.animation = "line-move .5s ease-in-out 1 alternate both";
+   	}else{
+   	  this.style.webkitAnimation = "line-move2 .5s ease-in-out 1 alternate both";
+   	  this.style.mozAnimation = "line-move2 .5s ease-in-out 1 alternate both";
+   	  this.style.msAnimation = "line-move2 .5s ease-in-out 1 alternate both";
+   	  this.style.oAnimation = "line-move2 .5s ease-in-out 1 alternate both";
+   	  this.style.animation = "line-move2 .5s ease-in-out 1 alternate both";
+   	}
+   	count2++;
+   }
+  
+  // 第三种
+   var d3 = document.getElementById("d3");
+   var count3 = 0;
+   d3.onclick = function(){
+   	if(count3 % 2 == 0){
+ 	 move(this,{left:300});
+   	}else{
+   		move(this,{left:0});
+   	}
+   	count3++;
+   }
+
+   function move(obj,json,fnEnd){
+          clearInterval(obj.timer);
+          obj.timer = setInterval(function(){
+              var bStop = true;
+              for(var attr in json){
+                  var cur = 0;
+                  if(attr == "opacity"){
+                      cur = Math.round(parseFloat(getStyle(obj,attr))*100);
+                  }else {
+                      cur = parseInt(getStyle(obj,attr));
+                  }
+
+                  var speed = (json[attr]-cur)/6;
+                  speed = speed>0?Math.ceil(speed):Math.floor(speed);
+
+                  if(cur!=json[attr]) bStop = false;
+
+                  if(attr=="opacity"){
+                      cur+=speed;
+                      obj.style.filter = "alpha(opacity:"+cur+")";
+                      obj.style.opacity = cur/100;
+                  }else{
+                      obj.style[attr] = cur+speed+"px";
+                  }
+              }
+              if(bStop){
+                  clearInterval(obj.timer);
+                  if(fnEnd)fnEnd();
+              }
+          },30);
+      }
+function getStyle(obj,name){
+  if(obj.currentStyle){
+     return obj.currentStyle[name];   
+  }else{
+     return getComputedStyle(obj,false)[name];
+  }
+}
+
+})();
+
+</script>
+</body>
+</html>

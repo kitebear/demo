@@ -11,7 +11,7 @@ $(function () {
     };
 
     $('html').one('touchstart', function () {
-        //play.play();
+        play.play();
         if (!init_auto_start) {
             runPage.go(1);
         }
@@ -123,7 +123,7 @@ $(function () {
 
                     break;
                 case 1:
-                    //play.play();
+                    play.play();
                     $("#musiccontrolon").removeClass("ele_hide");
                     runPage.removePage('page1');
                     break;

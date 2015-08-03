@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.n1{
+			width: 100px;
+			height: 50px;
+			background-color: red;
+		}
+
+		.n2{
+			width: 200px;
+			height: 100px;
+		}
+
+		.n3{
+			width: 200px;
+			height: 100px;
+			display: inline-block;
+			position: relative;
+			cursor: pointer;
+		}
+
+		.cursor_move{
+			cursor: move;
+		}
+
+		.n3 > div{
+			position: absolute;
+			width: 200px;
+			height: 100px;
+			top:0;
+			left: 0;
+		}
+
+		.t2{
+			  padding: 15px;
+			  margin: 15px;
+			  border: 15px solid;
+			  box-sizing: border-box;
+		}
+
+		.n5{
+			position:relative;
+			margin-left: 300px;
+		}
+		/*
+		 *  闪烁动画
+		 */
+		.animationFicker{
+			  animation-name: animationFicker;
+			  -webkit-animation-name: animationFicker;
+			  animation-duration: 0.8s;
+			  animation-iteration-count: infinite;
+			  animation-timing-function: ease-in-out;
+			  -webkit-animation-duration: 0.8s;
+  			  -webkit-animation-iteration-count: infinite;
+			  -webkit-animation-timing-function: ease-in-out;
+			  visibility: visible !important;
+		}
+
+		@-webkit-keyframes animationFicker {
+		  0% {
+		    opacity: 1;
+		  }
+
+		  50% {
+		    opacity: 0.3;
+		  }
+
+		  100% {
+		    opacity: 1;
+		  }
+		}
+
+		@keyframes animationFicker {
+		  0% {
+		    opacity: 1;
+		  }
+
+		  50% {
+		    opacity: 0.3;
+		  }
+
+		  100% {
+		    opacity: 1;
+		  }
+		}
+	</style>
+</head>
+<body>
+	<div class="n1"></div>
+	<br/>
+	<br/>
+	<div class="n3">
+		<img src="1.png" class="n2" alt="loading">
+		<div></div>
+	</div>
+
+	<div class="n5">
+		<img src="3.png"  class="t1 t2" height="200" width="300" alt="">
+	</div>
+	<div class="n5">
+		<img src="3.png" class="t1 t2" height="200" width="300" alt="">
+	</div>
+	<p>dsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadasdsadsadsadasdsaassadas</p>
+	<script type="text/javascript" src="../jquery-2.1.3.js"></script>
+	<script type="text/javascript">
+		;(function ($) {
+		    //碰撞检测
+			function isButt(aObj, bObj) {
+				var a1 = aObj.offsetLeft;
+				var b1 = aObj.offsetTop;
+				var c1 = aObj.offsetLeft + aObj.offsetWidth;
+				var d1 = aObj.offsetTop + aObj.offsetHeight;
+
+				var a2 = bObj.offsetLeft;
+				var b2 = bObj.offsetTop;
+				var c2 = bObj.offsetLeft + bObj.offsetWidth;
+				var d2 = bObj.offsetTop + bObj.offsetHeight;
+				/*
+				* 1 当前元素在目标元素的左边没有接触   返回false
+				* 2 当前元素在目标元素的上边没有接触   返回false
+				* 3 当前元素在目标元素的右边没有接触   返回false
+				* 4 当前元素在目标元素的下边没有接触   返回false
+				* */
+				return !(a2 > c1 || b2 > d1 || a1 > c2 || b1 > d2);
+			}
+
+			//两个点之间的距离  三角形勾股定理
+			function line(obj1, obj2) {
+				var a = (obj1.offsetLeft + obj1.offsetWidth / 2) - (obj2.offsetLeft + obj2.offsetWidth / 2);
+				var b = (obj1.offsetTop + obj1.offsetHeight / 2) - (obj2.offsetTop + obj2.offsetHeight / 2);
+				return Math.sqrt(a * a + b * b);
+			}
+
+		    //找出相遇点中最近的元素
+			function findObj(obj,target_arr) {
+				var arr1 = []
+					,arr2 = []
+					,res = null
+					,minnum = 9999999
+					,min_el = null
+					,i=0
+					,len=0;
+				for (i = 0,len=target_arr.length; i < len; i++) {
+					res = isButt(obj, target_arr[i]);
+					if (res) {
+						arr1.push(line(obj, target_arr[i]));
+						arr2.push(target_arr[i]);
+					}
+				}
+				
+				for (i = 0,len=arr1.length; i < len; i++) {
+					if (arr1[i] < minnum) {
+						minnum = arr1[i];
+						min_el = arr2[i];
+					}
+				}
+				return min_el;
+			}
+
+			//移除动画Class
+			function removeClass(className,target,arr){
+				var $ele = null;
+                for(var i = 0,len = arr.length; i<len; i++){
+                	$ele = $(arr[i]);
+                	if($ele.hasClass(className)&&arr[i]!=target){
+                		$ele.removeClass(className);
+                	}
+                }
+			}
+
+		    /**
+		     *
+		     * @param options
+		     * className 可以移动的Img 元素
+		     * target_name 被移动到的元素的规则
+		     * cursor_class 手势Class
+		     * animation_class 动画Class
+		     * down_mouse_func($ele) 按下鼠标件以后的回调函数 参数： 按下的当前元素
+		     * callback($ele) 操作完毕回调函数 参数：被操作过的元素
+		     * @description
+		     * 介于2个图片之间的移动
+		     * 规则是
+		     */
+		    $.move_img = function (options) {
+		    	var lately = null;
+		    	var target_arr=$("."+options.target_name);
+		        var status=true;
+		        if(null===options.className||undefined===options.className||''===options.className){
+		            status=false;
+		        }
+		        if(null===options.target_name||undefined===options.target_name||''===options.target_name){
+		            status=false;
+		        }
+		        if(!status){
+		            return;
+		        }
+		        //给当前元素加上鼠标点击
+		        $("."+options.className).mousedown(function(event){
+    	            if(event.which!==1){
+		                return;
+		            }
+
+		        	var tagert=true;
+		            var ele=$(event.target).parent();
+		            ele.addClass(options.cursor_class);
+		            var click_location={
+		                x:event.pageX,
+		                y:event.pageY
+		            };
+		            $(document).mousemove(function(event){
+		            	if(tagert){
+			                var offset=ele.offset();
+			                ele.css({right:(click_location.x-event.pageX)+"px",bottom:(click_location.y-event.pageY)+"px"});
+
+			                //取出最近的元素
+			                lately = findObj(ele[0],target_arr);
+			                if(options.animation_class){
+				                $(lately).addClass(options.animation_class);
+								removeClass(options.animation_class,lately,target_arr);
+			                }
+		                }
+		            });
+		            $(document).mouseup(function(event){
+		            	tagert = false;
+		                $(document).unbind();
+		                ele.removeClass(options.cursor_class);
+		                if(!lately){
+		                	ele.animate({right:0,bottom:0}, 300);
+		                	return;
+		                }
+		            	var $lately = $(lately);
+		                $(lately).removeClass(options.animation_class);
+		                $lately.prop("src",ele.find("img").attr("src"));
+		            });
+		            // options.down_mouse_func&&options.down_mouse_func();
+		        });
+
+		    };
+		})(jQuery);
+
+		console.log("offsetLeft 向左",$(".t1")[0].offsetLeft);
+		console.log("offsetTop 向上",$(".t1")[0].offsetTop);
+		console.log("offsetWidth 宽度",$(".t1")[0].offsetWidth);
+		console.log("offsetHeight 高度",$(".t1")[0].offsetHeight);
+		console.log($(".t1")[0].getBoundingClientRect());
+
+		console.log("clientHeight ",$(".t1")[0].clientHeight);
+		console.log("clientWidth ",$(".t1")[0].clientWidth);
+
+		console.log($(".t1").offset());
+		console.log($(".t1").width());
+		console.log($(".t1").height());
+	</script>
+	<script type="text/javascript" src="1.js"></script>
+</body>
+</html>

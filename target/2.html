@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;font-family: Simsun;}
+		div {
+		  background-color: #0e51a7;
+		}
+		span {
+		  background-color: #ff9e00;
+		}
+		.span-1 {
+		  line-height: 1;
+		}
+		.span-2 {
+		  line-height: 30px;
+		}
+		.dasdas{
+		  display: inline-block;	
+		}
+		.dasdas:before{
+			content: "dasdasdasd";
+		}
+	</style>
+	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=YcERzz7knIbukQh79o2YqF3b"></script> -->
+</head>
+<body>
+<!-- 	<img src="1.png" height="399" width="600" class="dasdas" ></img>
+	<input type="text" class="dasdas" />
+	<div class="dasdas"></div>
+	<a class="dasdas"></a> -->
+  <!--
+    1、containing boxes（段落就是一种，包含其他box）
+    2、inine boxes（让内容显示成一行。包涵有：emphasis元素、anonymous）
+    3、line boxes（containing box 的每一行）
+    4、content area（围绕文字的看不见的一种box，它的高取决font-size）
+    1、block-level boxes（块级盒），由代码中的<p>标签产生，它可以包含其它的box。
+    2、inline-level boxes（行级盒），在<p>标签中有一系列的inline-level boxes，如下：
+    3、line box，由inline-level boxes连接而成，每一行称为一个line box
+    4、content area，它是围绕着文字的并且看不见的一种box，它的高度取决于font-size。如下：
+  -->
+  <div id="baidu_map" style="width:500px;height:500px;"></div>
+	<script type="text/javascript">
+		// var unboundForEach = Array.prototype.forEach,
+  //   forEach = Function.prototype.call.bind(unboundForEach);
+  //   console.log(forEach);
+ //    function change() {
+	//     alert(typeof fn) // ?
+	//     function fn() {
+	//         alert('hello')
+	//     }
+	//     var fn
+	// }
+	// change()
+// 	var uname = 'jack'
+// function change() {
+//     alert(uname) // ?
+//     var uname = 'lily'
+//     alert(uname)
+// }
+// change()
+	// console.log(Number([]));
+	// console.log(Boolean(![]));
+	// console.log(![]==[]);
+	// function NT(){
+	// 	this.XXX = function(){console.log("nihaoa");} 
+	// }
+	// var a=new NT();
+	// var b=new NT();
+	// a.XXX();
+	// b.XXX();
+	
+// var count=0;
+// function Nihao(){	this.arr = []; }
+// Nihao.prototype.add=function(callback){	 this.arr.push(callback);	return this;};
+// Nihao.prototype.execute=function(){ for(var i=0,len=this.arr.length;i<len;i++){ this.arr[i]();	}};
+// var haa = function(){
+// 	var nt=new Nihao();
+// 	setTimeout(function(){
+// 		console.log(count++);
+// 		nt.execute();
+// 	},3000);
+// 	return nt;
+// };
+
+// var hahaha = function(){
+// 	var n1 = new Nihao(),
+// 	arrLeng = arguments.length;
+// 	var temp = 0;
+// 	function callBack(){
+// 		++temp;
+// 		if(temp==arrLeng){
+// 			n1.execute();
+// 		}
+// 	}
+
+// 	for(var i=0;i<arrLeng;i++){
+// 		arguments[i].add(callBack);
+// 	}
+
+// 	return n1;
+// };
+
+// hahaha(haa(),haa()).add(function(){	console.log("你好啊"); }).add(function(){	console.log("我好啊"); });
+
+var arr = [ 1, 2 ];
+arr.b = "123";
+console.log(arr.toString());
+	</script>
+
+</body>
+</html>
+	<!-- <script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("baidu_map");    // 创建Map实例
+		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+		map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+		map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	</script> -->
