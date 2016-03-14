@@ -1,0 +1,53 @@
+@mixin rotate($a){
+  -webkit-transform: rotate($a);
+  -moz-transform: rotate($a);
+  -ms-transform: rotate($a);
+  -o-transform: rotate($a);
+  transform: rotate($a);
+}
+
+@mixin clear_fix {
+  &:before{
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin flex(){
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-flow($a,$b){
+  flex-flow: $a $b;
+  -webkit-flex-flow: $a $b;
+}
+
+@mixin justify-content($a){
+  justify-content: $a;
+  -webkit-justify-content: $a;
+}
+
+@mixin align-items($a){
+  align-items: $a;
+  -webkit-align-items: $a;
+}
+
+@mixin flexcount($a){
+  flex: $a;
+  -webkit-flex: $a;
+}
+
+@mixin animate-from1($a,$b,$c,$d){
+  animation-name: $a;
+  -webkit-animation-name: $a;
+  animation-duration: $b;
+  -webkit-animation-duration: $b;
+  animation-iteration-count: $c;
+  animation-timing-function: $d;
+  -webkit-animation-iteration-count: $c;
+  -webkit-animation-timing-function: $d;
+}

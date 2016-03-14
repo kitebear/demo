@@ -26,7 +26,7 @@
 
 
 
-/*ÒôÀÖÍ¼±ê*/
+/*ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½*/
 
 .music-logo {
 
@@ -58,7 +58,7 @@
 
 
 
-/*¼ýÍ·*/
+/*ï¿½ï¿½Í·*/
 
 .arrow {
 
@@ -88,7 +88,7 @@
 
 
 
-/*¼ÓÔØÒ³*/
+/*ï¿½ï¿½ï¿½ï¿½Ò³*/
 
 .page-loading {
 
@@ -248,7 +248,7 @@
 
 
 
-/*±³¾°Í¼*/
+/*ï¿½ï¿½ï¿½ï¿½Í¼*/
 
 .page {
 
@@ -272,7 +272,7 @@
 
 
 
-/*±êÌâºÍÍ¼±ê*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½*/
 
 .page-logo {
 
@@ -352,7 +352,7 @@
 
 
 
-/*µÚÒ»Ò³*/
+/*ï¿½ï¿½Ò»Ò³*/
 
 .page0.pbg {
 
@@ -531,7 +531,7 @@
 
 
 
-/*µÚÒ»Ò³µÄÍ¼Æ¬Ç½*/
+/*ï¿½ï¿½Ò»Ò³ï¿½ï¿½Í¼Æ¬Ç½*/
 .pbg21{ 
 position: absolute;
 width:100%;
@@ -772,7 +772,7 @@ width:100%;
 
 
 
-/*µÚ¶þÒ³*/
+/*ï¿½Ú¶ï¿½Ò³*/
 .pbg3{ 
 position: absolute;
 width:100%;
@@ -855,7 +855,7 @@ top:40%;
 
 
 
-/*µÚÈýÒ³*/
+/*ï¿½ï¿½ï¿½ï¿½Ò³*/
 
 .page3-universe {
 
@@ -1015,7 +1015,7 @@ top:40%;
 
 
 
-/*µÚÈýËÄÒ³Ö®¼äµÄÒ»Ò³*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³Ö®ï¿½ï¿½ï¿½Ò»Ò³*/
 .pbg4{ 
 position: absolute;
 width:100%;
@@ -1276,7 +1276,7 @@ padding-bottom:10px;}
 
     -webkit-transform-origin: center 0;
 
-     fade-in 1s ease-out 1.4s;
+     fade-in: 1s ease-out 1.4s;
 
     -webkit-animation-fill-mode: forwards;
 
@@ -1344,7 +1344,7 @@ padding-bottom:10px;}
 
 
 
-/*µÚ4Ò³£¬logoÇ½*/
+/*ï¿½ï¿½4Ò³ï¿½ï¿½logoÇ½*/
 
 .page4-big-logo-3 img, .page4-big-logo-4 img, .page4-big-logo-5 img, .page4-big-logo-6 img {
 
@@ -1626,7 +1626,7 @@ padding-bottom:10px;}
 
 
 
-/*µÚÎåÒ³*/
+/*ï¿½ï¿½ï¿½ï¿½Ò³*/
 
 .page5-map {
 
@@ -1740,7 +1740,7 @@ padding-bottom:10px;}
 
 
 
-/*µØÍ¼Ò³*/
+/*ï¿½ï¿½Í¼Ò³*/
 
 .page-map {
 
@@ -1856,7 +1856,7 @@ padding-bottom:10px;}
 
 
 
-/*µÚÁùÒ³*/
+/*ï¿½ï¿½ï¿½ï¿½Ò³*/
 
 .page6-title {
 
@@ -1966,7 +1966,7 @@ padding-bottom:10px;}
 
 
 
-/*¶¯»­*/
+/*ï¿½ï¿½ï¿½ï¿½*/
 
 @-webkit-keyframes bh-circle {
 
@@ -1992,7 +1992,7 @@ padding-bottom:10px;}
 
 
 
-/*´Ó´ó±äÐ¡*/
+/*ï¿½Ó´ï¿½ï¿½Ð¡*/
 
 @-webkit-keyframes scale-to-zero-with-center {
 
@@ -2064,7 +2064,7 @@ padding-bottom:10px;}
 
 
 
-/*Ðý×ª¶¯»­*/
+/*ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½*/
 
 @-webkit-keyframes spin {
 
@@ -2086,7 +2086,7 @@ padding-bottom:10px;}
 
 
 
-/*Ã÷°µÉÁ¶¯*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
 @-webkit-keyframes flicker {
 

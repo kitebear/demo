@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+    <title>HTML5测试</title>
+</head>
+<body >
+<div style="height: 2000px;width: 100%;background: pink" id="divADBox">
+</div>
+<script type="text/javascript">
+    var startX, startY, endX, endY;
+    var showADID = 1;
+    document.getElementById("divADBox").addEventListener("touchstart", touchStart, false);
+    document.getElementById("divADBox").addEventListener("touchmove", touchMove, false);
+    document.getElementById("divADBox").addEventListener("touchend", touchEnd, false);
+    function touchStart(event) {
+        var touch = event.touches[0];
+        startY = touch.pageY;
+        startX = touch.pageX;
+    }
+    function touchMove(e) {
+        var touch = e.touches[0];
+        endX = touch.pageX;
+        console.log("touchMove  "+ endX)
+        e.preventDefault();
+    }
+    function touchEnd(event) {
+        console.log("touchEnd");
+    }
+</script>
+</body>
+</html>
